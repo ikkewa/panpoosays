@@ -1,0 +1,15 @@
+{
+  "name": "panpoo-client",
+  "version": "0.0.1",
+  "description": "frontend client for panpoo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "panpoo",
+    "phaser.io"
+  ],
+  "author": "IkkeWa",
+  "license": "MIT"
+}
