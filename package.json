@@ -11,5 +11,32 @@
     "phaser.io"
   ],
   "author": "IkkeWa",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "component-dom": "^1.0.8",
+    "phaser": "^2.3.0"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.4",
+    "debounce": "^1.0.0",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-cache": "^0.2.10",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-jade": "^1.0.1",
+    "gulp-jshint": "^1.11.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-size": "^1.2.1",
+    "gulp-stylus": "^2.0.5",
+    "gulp-useref": "^1.2.0",
+    "gulp.spritesmith": "^3.8.2",
+    "jshint-stylish": "^2.0.0",
+    "nib": "^1.1.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.1",
+    "spritesmith-texturepacker": "^1.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.2"
+  }
 }
