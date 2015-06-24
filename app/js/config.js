@@ -1,4 +1,4 @@
 
 module.exports = {
-  socketUrl: 'http://localhost:3000'
+  socketUrl: 'http://localhost:8080'
 };
