@@ -24,14 +24,6 @@ Play.prototype = {
     this.socket = socketio(config.socketUrl);
     this.socket.on('connect', this.onConnect.bind(this));
     this.socket.on('tweet', this.onTweet.bind(this));
-
-    // Chrome loads voices asynchronously.
-    // try it here, maybe it works
-    window.speechSynthesis.onvoiceschanged = function(e) {
-      this.speechVoice = window.speechSynthesis.getVoices().filter(function(voice) {
-        return voice.lang === 'de-DE';
-      });
-    }.bind(this);
   },
 
   create: function create() {
@@ -69,17 +61,10 @@ Play.prototype = {
     // show tweet logic
 
     // need to load voice here, as in preload() the getVoices() always returned empty array
-    this.speechVoice = window.speechSynthesis.getVoices().filter(function(voice) {
-      return voice.lang === 'de-DE';
-    });
+    this.speechVoice = this.getSpeechSyntesisVoice();
 
-    // double check
-    if(!this.speechVoice || this.speechVoice.length === 0) {
-      //TODO
-      this.supportSpeech = false;
-    }
 
-    if(this.supportSpeech) {
+    if(this.speechVoice) {
       if(!this.isTalking) {
         // setup the utterance
         this.speaking = new SpeechSynthesisUtterance();
@@ -89,7 +74,7 @@ Play.prototype = {
         this.speaking.volume = 1.0;
         this.speaking.rate = 1.0;
         this.speaking.pitch = 1.7;
-        this.speaking.voice = this.speechVoice[0];
+        this.speaking.voice = this.speechVoice;
         // bindings when speaking to the visual
         this.speaking.onstart = function() {
           this.isTalking = true;
@@ -108,6 +93,7 @@ Play.prototype = {
         }.bind(this);
 
         // ok lets talk
+        console.log('now talk...', this.speaking);
         window.speechSynthesis.speak(this.speaking);
       }
     }
@@ -118,6 +104,22 @@ Play.prototype = {
     }
 
     this.tid = false;
+  },
+
+  getSpeechSyntesisVoice: function getSpeechSyntesisVoice() {
+    if(!this.supportSpeech) {
+      return false;
+    }
+
+    var voices = window.speechSynthesis.getVoices().filter(function(voice) {
+      return voice.lang === 'de-DE' || voice.lang === 'de_DE';
+    });
+
+    if(voices && Array.isArray(voices) && voices.length > 0) {
+      return voices[0];
+    }
+
+    return false;
   }
 };
 
