@@ -1,5 +1,5 @@
 var socketio = require('socket.io-client');
-var config = require('../config');
+var config = require('../../../config/config');
 
 function Play() {
   this.queue = [];
