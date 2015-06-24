@@ -7,5 +7,6 @@ gulp.task('setDevelopment', function() {
 
 gulp.task('setDeployment', function() {
   global.isDeployment = true;
+  process.env.NODE_ENV = 'production';
 });
 
