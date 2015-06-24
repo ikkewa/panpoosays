@@ -1,0 +1,79 @@
+doctype html
+html
+  head
+    title PanPoo - Let the Poo speak to you!
+
+    // build:css css/style.css
+    link(href='css/normalize.css', rel='stylesheet')
+    link(href='css/skeleton.css', rel='stylesheet')
+    link(href='css/style.css', rel='stylesheet')
+    // endbuild
+
+    // build:remove
+    script(src='js/devreload.js')
+    // endbuild
+
+    link(href='http://fonts.googleapis.com/css?family=Bangers|Open+Sans',rel='stylesheet' type='text/css')
+  body
+    #container.container
+      #canvas.section.hide
+      div.section
+
+        img#logo.logo.u-max-full-width(src='assets/panpoo_with.png')
+        h1.head PanPoo - Let the poo speak to you!
+
+        a#start.btn.btn-pink.btn-ani  Start!
+      #intro.section
+
+        p PanPoo ist ein einfaches Webexperiment fuer die #LaFamilia Community.
+
+        p Es schaut aus nach Twitter Nachrichten von @panpoosays und liesst sie Dir vor.
+          br
+          | Damit es funktioniert brauchst Du einen Browser der HTML5 Text2Speech 
+          | unterstuetzt, derzeit Google Chrome>v33
+          br
+          | Wenn PanPoo auch deine Nachricht vorlesen soll, tweete einfach an @panpoosays 
+        a(href="https://twitter.com/intent/tweet?screen_name=panpoosays",class="twitter-mention-button", data-size="large", data-related="panpoosays") Tweet to @panpoosay
+
+        br
+        br
+        p Ich hoffe das kleine Experiment verzaubert dem einen oder anderen ein
+          | Laecheln ins Gesicht oder motiviert auch mal etwas in diese Richtung zu machen.
+
+        p Es gruesst Euer
+          br
+          span.sign Ikke
+
+        a(href="https://twitter.com/ikkewa_", class="twitter-follow-button", data-show-count="false") Follow @ikkewa_
+        a(href="https://twitter.com/share", class="twitter-share-button", data-via="panpoosays", data-hashtags="panpoosays") Tweet
+
+      #technical.section
+        h3 Technisches und Umsetzung
+        p Folgende Tools und Services wurden genutzt
+        .row.technical-list
+          .container
+            .one-half.column
+              h4 Tools
+              ul.technical-list
+                li Inkscape
+                li Vim
+                li Google Chrome
+            .one-half.column
+              h4 Services
+              ul
+                li Google Webfonts
+                li Github
+                li Amazon Webservice
+                li Twitter
+
+        p und viele unter freier MIT Lizenz stehender Libaries, nachzulesen im source code.
+          | Den Source Code kann man übrigens finden unter
+          a(href='#') folgt..
+
+    // build:js js/phaser.min.js
+    script(src='js/phaser.js')
+    // endbuild
+    script(src='js/build.js')
+    script
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
