@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PanPoo - Let the Poo speak to you!</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link href="http://fonts.googleapis.com/css?family=Bangers|Open+Sans" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="container" class="container">
+      <div id="canvas" class="section hide"></div>
+      <div class="section"><img id="logo" src="assets/panpoo_with.png" class="logo u-max-full-width">
+        <h1 class="head">PanPoo - Let the poo speak to you!</h1><a id="start" class="btn btn-pink btn-ani"> Start!</a>
+      </div>
+      <div id="intro" class="section">
+        <p>PanPoo ist ein einfaches Webexperiment fuer die #LaFamilia Community.</p>
+        <p>Es schaut aus nach Twitter Nachrichten von @panpoosays und liesst sie Dir vor.<br>Damit es funktioniert brauchst Du einen Browser der HTML5 Text2Speech 
+          unterstuetzt, derzeit Google Chrome>v33<br>Wenn PanPoo auch deine Nachricht vorlesen soll, tweete einfach an @panpoosays 
+        </p><a href="https://twitter.com/intent/tweet?screen_name=panpoosays" data-size="large" data-related="panpoosays" class="twitter-mention-button">Tweet to @panpoosay</a><br><br>
+        <p>
+          Ich hoffe das kleine Experiment verzaubert dem einen oder anderen ein
+          Laecheln ins Gesicht oder motiviert auch mal etwas in diese Richtung zu machen.
+        </p>
+        <p>Es gruesst Euer<br><span class="sign">Ikke</span></p><a href="https://twitter.com/ikkewa_" data-show-count="false" class="twitter-follow-button">Follow @ikkewa_</a><a href="https://twitter.com/share" data-via="panpoosays" data-hashtags="panpoosays" class="twitter-share-button">Tweet</a>
+      </div>
+      <div id="technical" class="section">
+        <h3>Technisches und Umsetzung</h3>
+        <p>Folgende Tools und Services wurden genutzt</p>
+        <div class="row technical-list">
+          <div class="container">
+            <div class="one-half column">
+              <h4>Tools</h4>
+              <ul class="technical-list">
+                <li>Inkscape</li>
+                <li>Vim</li>
+                <li>Google Chrome</li>
+              </ul>
+            </div>
+            <div class="one-half column">
+              <h4>Services</h4>
+              <ul>
+                <li>Google Webfonts</li>
+                <li>Github</li>
+                <li>Amazon Webservice</li>
+                <li>Twitter</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p>
+          und viele unter freier MIT Lizenz stehender Libaries, nachzulesen im source code.
+          Den Source Code kann man übrigens finden unter<a href="#">folgt..</a>
+        </p>
+      </div>
+    </div>
+    <script src="js/phaser.min.js"></script>
+    <script src="js/build.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </body>
+</html>
