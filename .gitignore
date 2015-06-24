@@ -41,4 +41,4 @@ Icon?
 /build/*
 
 # config files
-/app/js/config.js
+/config/config.js
